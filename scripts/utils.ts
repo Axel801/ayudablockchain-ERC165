@@ -3,7 +3,7 @@ import { Interface, NamedFragment } from "ethers";
 
 export function getInterfaceID<T extends Interface>(contractInterface: T) {
 
-    let interfaceID: bigint = 0n;
+    let interfaceID = 0n;
     const functions = contractInterface.fragments.filter(fragment => fragment.type == 'function') as NamedFragment[];
 
     for (let i = 0; i < functions.length; i++) {
